@@ -1,0 +1,44 @@
+{
+    "author": {
+        "email": "jcrom@163.com",
+        "name": "Ju Chao"
+    },
+    "bin": "./bin/prettydiff",
+    "bugs": {
+        "email": "jcrom@163.com",
+        "url": "https://github.com/jcrom/emp-prettydiff/issues"
+    },
+    "description": "Language aware code comparison tool for several web based languages. It also beautifies, minifies, and a few other things.",
+    "homepage": "http://prettydiff.com/",
+    "keywords": [
+        "diff",
+        "prettydiff",
+        "pretty diff",
+        "pretty print",
+        "pretty-print",
+        "beautify",
+        "minify",
+        "xml",
+        "html",
+        "css",
+        "jsx",
+        "es6",
+        "javascript",
+        "emp"
+    ],
+    "license": "CC0-1.0",
+    "main": "prettydiff.js",
+    "maintainers": [
+        {
+            "email": "jcrom@163.com",
+            "name": "jcrom"
+        }
+    ],
+    "name": "emp-prettydiff",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jcrom/emp-prettydiff/"
+    },
+    "test": "node test/lint.js",
+    "version": "0.0.0"
+}
