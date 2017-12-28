@@ -70,6 +70,17 @@
                         metaerror = global.prettydiff.meta.error;
                         return jsout;
                     },
+                    luapretty    = function core__luapretty() {
+                        var luaout = global
+                            .prettydiff
+                            .luapretty(options);
+                        if (options.nodeasync === true) {
+                            metaerror = luaout[1];
+                            return luaout[0];
+                        }
+                        metaerror = global.prettydiff.meta.error;
+                        return luaout;
+                    },
                     markuppretty = function core__markuppretty() {
                         var markout = global
                             .prettydiff
@@ -296,7 +307,9 @@
                     if (options.mode === "analysis") {
                         options.accessibility = true;
                     }
-                    if (options.lang === "css") {
+                    if (options.lang === "lua") {
+                        apioutput      = luapretty();
+                    } else if (options.lang === "css") {
                         apioutput = csspretty();
                     } else if (options.lang === "csv") {
                         apioutput = global
@@ -421,6 +434,11 @@
                         localPath + "/lib/markuppretty.js"
                     );
                 }
+                if (global.prettydiff.luapretty === undefined) {
+                    global.prettydiff.luapretty = require(
+                        localPath + "/lib/lua-beauty"
+                    );
+                }
             }());
         }
     } else {
@@ -449,7 +467,8 @@
         prettydiff   : 170707, //this file
         safeSort     : 170514, //safeSort lib
         version      : "2.2.9", //version number
-        webtool      : 170707
+        webtool      : 170707,
+        luapretty    : 171220
     };
     global.prettydiff.edition.latest = (function edition_latest() {
         return Math.max(

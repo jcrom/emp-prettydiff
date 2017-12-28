@@ -40,5 +40,7 @@
         "url": "https://github.com/jcrom/emp-prettydiff/"
     },
     "test": "node test/lint.js",
-    "version": "0.0.0"
+    "version": "0.0.0",
+    "dependencies": {
+    }
 }
